@@ -1,0 +1,38 @@
+[
+    {
+        "id" : 1,
+        "productname" : "san pham 1",
+        "image" : "😥",
+        "from" : "Spain",
+        "nutrients" : "Vâtminb",
+        "quantity" :3,
+        "price" : "6.30",
+        "organic" : true,
+        "description" : "sinh vien viet nam có quyền hưởng tự do và độc lập"
+
+    },
+    {
+        "id" : 2,
+        "productname" : "san pham 2",
+        "image" : "🫢",
+        "from" : "kinchina",
+        "nutrients" : "Vâtminb21",
+        "quantity" :32,
+        "price" : "2.30",
+        "organic" : true,
+        "description" : "sinh vien viet nam có quyền hưởng tự do và độc lập"
+
+    },
+    {
+        "id" : 3,
+        "productname" : "san pham 3",
+        "image" : "😘",
+        "from" : "japan",
+        "nutrients" : "Vâtminbdad",
+        "quantity" :63,
+        "price" : "6",
+        "organic" : false,
+        "description" : "sinh vien viet nam có quyền hưởng tự do và độc lập"
+
+    }
+]
