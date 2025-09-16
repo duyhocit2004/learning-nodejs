@@ -2,6 +2,8 @@ const http = require('http')
 const fs = require('fs')
 const url = require('url');
 
+const slugify = require('slugify');
+
 const  OverView = fs.readFileSync(`${__dirname}/templates/template-card.html`,'utf-8');
 const  ProductDetail = fs.readFileSync(`${__dirname}/templates/product.html`,'utf-8');
 //OverView 
@@ -26,7 +28,13 @@ const server = http.createServer((req,res)=>{
     // console.log(url);
     const {query,pathname}= url.parse(req.url,true)
 
-    // const pathname = req.url;
+    // console.log(slugify("Xin Chao Ban",{
+    //     lower:true,
+    //     replacement : ""
+    // }))
+
+    const sults = productData.map(el=> slugify(el.productname,{lower:true}))
+    console.log(sults);
 
 
     if(pathname === "/" || pathname === "/OverView"){
