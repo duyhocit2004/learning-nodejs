@@ -1,0 +1,1 @@
+exports.congNhanChia = (a,b) =>  a +b
