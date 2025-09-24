@@ -20,18 +20,18 @@ const writeFile = (file,data) => {
 }
 
 
-ReadFilePro(`${__dirname}/dog.txt`)
-  .then((res) => {
-    return superagent.get(`https://dog.ceo/api/breed/${res}/images/random`);
-  }).then((res)=>{
-    writeFile(`${__dirname}/imageDog.txt`,res.body.message);
-  })
-  .then(res =>{
-    console.log("chỉnh sửa thành công")
-  })
-  .catch((error) => {
-    console.log(error.message);
-  });
+// ReadFilePro(`${__dirname}/dog.txt`)
+//   .then((res) => {
+//     return superagent.get(`https://dog.ceo/api/breed/${res}/images/random`);
+//   }).then((res)=>{
+//     writeFile(`${__dirname}/imageDog.txt`,res.body.message);
+//   })
+//   .then(res =>{
+//     console.log("chỉnh sửa thành công")
+//   })
+//   .catch((error) => {
+//     console.log(error.message);
+//   });
 
 // fs.readFile(`${__dirname}/dog.txt`, (error, data) => {
 //     console.log("con cho " + data)
@@ -46,3 +46,19 @@ ReadFilePro(`${__dirname}/dog.txt`)
 //     })
 
 // })
+
+const file = async ()=>{
+    try {
+        const data = await ReadFilePro(`${__dirname}/dog.txt`)
+        console.log(data)
+
+        const search = await superagent.get(`https://dog.ceo/api/breed/${data}/images/random`);
+        console.log('tìm kiếm thành công');
+
+        await writeFile(`${__dirname}/imageDog.txt`,search.body.message);
+        console.log("viết thành công");
+    } catch (error) {
+        console.log("lỗi"+error)
+    }
+}
+file()
